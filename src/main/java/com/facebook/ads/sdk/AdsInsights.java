@@ -203,6 +203,10 @@ public class AdsInsights extends APINode {
   private List<AdsActionStats> mWebsiteCtr = null;
   @SerializedName("website_purchase_roas")
   private List<AdsActionStats> mWebsitePurchaseRoas = null;
+  @SerializedName("hourly_stats_aggregated_by_advertiser_time_zone")
+  private String mHourlyStatsAggregatedByAdvertiserTimeZone = null;
+  @SerializedName("hourly_stats_aggregated_by_audience_time_zone")
+  private String mHourlyStatsAggregatedByAudienceTimeZone = null;
   protected static Gson gson = null;
 
   public AdsInsights() {
@@ -1003,6 +1007,24 @@ public class AdsInsights extends APINode {
     this.mUniqueSocialClicks = value;
     return this;
   }
+  
+  public String getHourlyStatsAggregatedByAudienceTimeZone() {
+    return mHourlyStatsAggregatedByAudienceTimeZone;
+  }
+
+  public AdsInsights setHourlyStatsAggregatedByAudienceTimeZone(String value) {
+    this.mHourlyStatsAggregatedByAudienceTimeZone = value;
+    return this;
+  }
+  
+  public String getHourlyStatsAggregatedByAdvertiserTimeZone() {
+    return mHourlyStatsAggregatedByAdvertiserTimeZone;
+  }
+
+  public AdsInsights setHourlyStatsAggregatedByAdvertiserTimeZone(String value) {
+    this.mHourlyStatsAggregatedByAdvertiserTimeZone = value;
+    return this;
+  }
 
   public List<AdsActionStats> getFieldVideo10SecWatchedActions() {
     return mVideo10SecWatchedActions;
@@ -1533,6 +1555,8 @@ public class AdsInsights extends APINode {
     this.mVideoP95WatchedActions = instance.mVideoP95WatchedActions;
     this.mWebsiteCtr = instance.mWebsiteCtr;
     this.mWebsitePurchaseRoas = instance.mWebsitePurchaseRoas;
+    this.mHourlyStatsAggregatedByAdvertiserTimeZone = instance.mHourlyStatsAggregatedByAdvertiserTimeZone;
+    this.mHourlyStatsAggregatedByAudienceTimeZone = instance.mHourlyStatsAggregatedByAudienceTimeZone;
     this.context = instance.context;
     this.rawValue = instance.rawValue;
     return this;
